@@ -1,0 +1,4 @@
+repository "Sangre sin Castigo/Sangre sin Castigo@4673618888079@cloud"
+  path "/"
+    br "/main"
+    co "/main"
