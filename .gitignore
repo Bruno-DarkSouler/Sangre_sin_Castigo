@@ -1,2 +1,6 @@
 .vscode
 Library
+Temp/
+Build/
+Logs/
+UserSettings/
