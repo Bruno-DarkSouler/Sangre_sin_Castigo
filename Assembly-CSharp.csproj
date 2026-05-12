@@ -60,6 +60,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\script\topdownmovent.cs" />
+    <Compile Include="Assets\script\controlCamara.cs" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
