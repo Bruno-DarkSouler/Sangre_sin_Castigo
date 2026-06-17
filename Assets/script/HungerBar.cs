@@ -2,14 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class controlCamara : MonoBehaviour
+public class HungerBar : MonoBehaviour
 {
-
-    public int hola;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
