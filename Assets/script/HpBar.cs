@@ -20,6 +20,6 @@ public class HpBar : MonoBehaviour
     void Update()
     {
         fillBar.fillAmount = playerController.HP / maxHP;
-        Debug.Log(playerController.HP / maxHP);
+        
     }
 }
