@@ -14,7 +14,7 @@ public class PlayerStates : MonoBehaviour
         HP = 100;
         hunger = 50;
         thirst = 50;
-        cold = 0;
+        cold = 10;
     }
 
     //Functions for HP

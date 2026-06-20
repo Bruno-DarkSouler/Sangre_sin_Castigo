@@ -7,19 +7,18 @@ public class HpBar : MonoBehaviour
 {
 
     public Image fillBar;
-    private PlayerController playerController;
+    public PlayerStates playerStates;
     public float maxHP;
     // Start is called before the first frame update
     void Start()
     {
-        playerController = GameObject.Find("player").GetComponent<PlayerController>();
-        maxHP = playerController.HP;
+        maxHP = playerStates.HP;
     }
 
     // Update is called once per frame
     void Update()
     {
-        fillBar.fillAmount = playerController.HP / maxHP;
+        fillBar.fillAmount = playerStates.HP / maxHP;
         
     }
 }

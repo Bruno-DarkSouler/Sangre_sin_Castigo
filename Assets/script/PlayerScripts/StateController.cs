@@ -12,6 +12,9 @@ public class StateController : MonoBehaviour
 
     private int updateStatesTime;
 
+    private bool nightCold;
+    private bool nightColdApplied;
+
     void Start()
     {
         coldMultiplier = 1;
@@ -19,11 +22,14 @@ public class StateController : MonoBehaviour
         thirstMultiplier = 1;
 
         updateStatesTime = timeManager.minutes;
+
+        nightCold = true;
+        nightColdApplied = false;
     }
 
     void Update()
     {
-        if(timeManager.minutes - updateStatesTime >= 1)
+        if(timeManager.minutes - updateStatesTime >= 10)
         {
             updateStatesTime = timeManager.minutes;
             playerStates.increaseThirst(10 * thirstMultiplier);
@@ -33,7 +39,18 @@ public class StateController : MonoBehaviour
 
         if(timeManager.hours > 20 || timeManager.hours < 7)
         {
-            coldMultiplier = 2;
+            nightCold = true;
+        }
+        else
+        {
+            nightCold = false;
+            nightColdApplied = false;
+        }
+
+        if (nightCold && !nightColdApplied)
+        {
+            coldMultiplier += 1;
+            nightColdApplied = true;
         }
     }
 }

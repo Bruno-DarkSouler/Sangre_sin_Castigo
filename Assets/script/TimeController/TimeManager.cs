@@ -5,7 +5,7 @@ using UnityEngine.Rendering.Universal;
 
 public class TimeManager : MonoBehaviour
 {
-    private float timeMultiplier;
+    [SerializeField] private float timeMultiplier;
     private float timePassed;
     
     public int hours;
@@ -17,7 +17,7 @@ public class TimeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        timeMultiplier = 1000;
+        timeMultiplier = 60;
         timePassed = 0;
     }
 
@@ -34,7 +34,7 @@ public class TimeManager : MonoBehaviour
 
         sunLight.color = dayTimeColor.Evaluate(dayPorcentaje);
 
-        Debug.Log(dayPorcentaje);
+        // Debug.Log(dayPorcentaje);
         // Debug.Log(minutes);
         // Debug.Log(hours);
 
