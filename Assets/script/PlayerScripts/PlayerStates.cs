@@ -19,7 +19,7 @@ public class PlayerStates : MonoBehaviour
 
     //Functions for HP
 
-    void increaseHP(float quantity)
+    public void increaseHP(float quantity)
     {
         
         if(HP + quantity >= 100)
@@ -32,7 +32,7 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
-    void decreaseHP(float quantity)
+    public void decreaseHP(float quantity)
     {
         
         if(HP + quantity >= 100)
@@ -47,7 +47,7 @@ public class PlayerStates : MonoBehaviour
 
     //Functions for cold
 
-    void increaseCold(float quantity)
+    public void increaseCold(float quantity)
     {
         
         if(cold + quantity >= 100)
@@ -60,7 +60,7 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
-    void decreaseCold(float quantity)
+    public void decreaseCold(float quantity)
     {
         
         if(cold + quantity >= 100)
@@ -75,7 +75,7 @@ public class PlayerStates : MonoBehaviour
 
     //Functions for hunger
 
-    void increaseHunger(float quantity)
+    public void increaseHunger(float quantity)
     {
         
         if(hunger + quantity >= 100)
@@ -88,7 +88,7 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
-    void decreaseHunger(float quantity)
+    public void decreaseHunger(float quantity)
     {
         
         if(hunger + quantity >= 100)
@@ -103,7 +103,7 @@ public class PlayerStates : MonoBehaviour
 
     //Funcitons for thirst
 
-    void increaseThirst(float quantity)
+    public void increaseThirst(float quantity)
     {
         
         if(thirst + quantity >= 100)
@@ -116,7 +116,7 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
-    void decreaseThirst(float quantity)
+    public void decreaseThirst(float quantity)
     {
         
         if(thirst + quantity >= 100)
