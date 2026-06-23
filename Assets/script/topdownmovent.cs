@@ -10,8 +10,8 @@ public class topdownmovent : MonoBehaviour
     [SerializeField] private Vector2 direction;
     private Rigidbody2D rb2D;
     //Para la animacion
-    private float movex;
-    private float movey;
+    [SerializeField] private float movex;
+    [SerializeField] private float movey;
     private Animator animation;
 
     //Funcion para iniciar(siempre en mayuscula, son funciones de unity)
