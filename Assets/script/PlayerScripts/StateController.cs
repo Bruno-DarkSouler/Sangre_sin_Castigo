@@ -29,15 +29,20 @@ public class StateController : MonoBehaviour
 
     void Update()
     {
-        if(timeManager.minutes - updateStatesTime >= 10)
+        if(timeManager.minutes - updateStatesTime >= 2)
         {
             updateStatesTime = timeManager.minutes;
-            playerStates.increaseThirst(10 * thirstMultiplier);
-            playerStates.increaseHunger(10 * hungerMultiplier);
+            //playerStates.increaseThirst(10 * thirstMultiplier);
+            //playerStates.increaseHunger(10 * hungerMultiplier);
             playerStates.increaseCold(10 * coldMultiplier);
         }
 
-        if(timeManager.hours > 20 || timeManager.hours < 7)
+        ManageNightCold();
+    }
+
+    void ManageNightCold()
+    {
+        if (timeManager.hours > 20 || timeManager.hours < 7)
         {
             nightCold = true;
         }

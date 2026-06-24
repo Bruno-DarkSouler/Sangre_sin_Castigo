@@ -18,6 +18,6 @@ public class ColdBar : MonoBehaviour
     void Update()
     {
         fillBar.fillAmount = playerStates.cold / maxCold;
-        Debug.Log(playerStates.cold / maxCold);
+        //Debug.Log(playerStates.cold / maxCold);
     }
 }
