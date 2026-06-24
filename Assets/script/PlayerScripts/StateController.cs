@@ -10,6 +10,9 @@ public class StateController : MonoBehaviour
     public float hungerMultiplier;
     public float thirstMultiplier;
 
+    [Header("Stats to increase and decrease")]
+    public float coldToIncrease;
+
     private int updateStatesTime;
 
     private bool nightCold;
@@ -20,6 +23,8 @@ public class StateController : MonoBehaviour
         coldMultiplier = 1;
         hungerMultiplier = 1;
         thirstMultiplier = 1;
+
+        coldToIncrease = 0;
 
         updateStatesTime = timeManager.minutes;
 
@@ -34,7 +39,7 @@ public class StateController : MonoBehaviour
             updateStatesTime = timeManager.minutes;
             //playerStates.increaseThirst(10 * thirstMultiplier);
             //playerStates.increaseHunger(10 * hungerMultiplier);
-            playerStates.increaseCold(10 * coldMultiplier);
+            playerStates.increaseCold(coldToIncrease * coldMultiplier);
         }
 
         ManageNightCold();
@@ -50,12 +55,15 @@ public class StateController : MonoBehaviour
         {
             nightCold = false;
             nightColdApplied = false;
+            coldToIncrease += 7;
         }
 
         if (nightCold && !nightColdApplied)
         {
-            coldMultiplier += 1;
+            coldToIncrease += 7;
             nightColdApplied = true;
         }
+
+        
     }
 }

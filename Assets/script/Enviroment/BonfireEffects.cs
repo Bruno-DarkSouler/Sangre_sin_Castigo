@@ -13,6 +13,7 @@ public class BonfireEffects : MonoBehaviour
             isNearBonfire = true;
             stateController = collision.GetComponent<StateController>();
         }
+        Debug.Log(stateController.coldMultiplier);
 
         Debug.Log("Entraste de la hoguera");
     }
@@ -20,6 +21,7 @@ public class BonfireEffects : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         isNearBonfire = false;
+        Debug.Log(stateController.coldMultiplier);
         stateController = null;
         Debug.Log("Saliste de la hoguera");
     }
