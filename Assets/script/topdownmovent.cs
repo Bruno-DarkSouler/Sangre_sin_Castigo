@@ -34,8 +34,8 @@ public class topdownmovent : MonoBehaviour
             animation.SetFloat("finy", movey);
         }
         direction = new Vector2(movex, movey).normalized;
-        Debug.Log("movex: " + movex.ToString());
-        Debug.Log("movey: " + movey.ToString());
+        // Debug.Log("movex: " + movex.ToString());
+        // Debug.Log("movey: " + movey.ToString());
     }
     //Otra funcion para actualizar(siempre en mayuscula)
     private void FixedUpdate()

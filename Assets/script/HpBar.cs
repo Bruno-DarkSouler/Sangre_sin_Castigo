@@ -12,13 +12,12 @@ public class HpBar : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        maxHP = playerStates.HP;
+        maxHP = 100;
     }
 
     // Update is called once per frame
     void Update()
     {
         fillBar.fillAmount = playerStates.HP / maxHP;
-        
     }
 }

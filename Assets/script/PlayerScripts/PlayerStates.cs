@@ -32,16 +32,16 @@ public class PlayerStates : MonoBehaviour
         }
     }
 
-    public void decreaseHP(float quantity)
+    public void DecreaseHP(float quantity)
     {
         
-        if(HP + quantity >= 100)
+        if(HP - quantity < 0)
         {
-            HP = 100;
+            HP = 0;
         }
         else
         {
-            HP += quantity;
+            HP -= quantity;
         }
     }
 
