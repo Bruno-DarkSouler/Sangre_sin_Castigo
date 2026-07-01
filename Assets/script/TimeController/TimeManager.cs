@@ -6,7 +6,7 @@ using UnityEngine.Rendering.Universal;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private float timeMultiplier;
-    private float timePassed;
+    public float timePassed;
     
     public int hours;
     public int minutes;

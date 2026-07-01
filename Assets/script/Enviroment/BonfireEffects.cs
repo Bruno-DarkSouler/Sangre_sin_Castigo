@@ -5,15 +5,18 @@ using UnityEngine;
 public class BonfireEffects : MonoBehaviour
 {
     private bool isNearBonfire;
-    private StateController stateController;
+    private PlayerStates playerStates;
+    public TimeManager timeManager;
+    private float lastUpdate;
 
     void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.CompareTag("Player")){
+        if (collision.CompareTag("Player")) {
             isNearBonfire = true;
-            stateController = collision.GetComponent<StateController>();
+            playerStates = collision.GetComponent<PlayerStates>();
         }
-        Debug.Log(stateController.coldMultiplier);
+
+        lastUpdate = timeManager.minutes;
 
         Debug.Log("Entraste de la hoguera");
     }
@@ -21,16 +24,17 @@ public class BonfireEffects : MonoBehaviour
     void OnTriggerExit2D(Collider2D collision)
     {
         isNearBonfire = false;
-        Debug.Log(stateController.coldMultiplier);
-        stateController = null;
+        playerStates = null;
         Debug.Log("Saliste de la hoguera");
     }
 
     void Update()
     {
-        if (isNearBonfire && stateController.coldMultiplier > 0)
+
+        if (isNearBonfire && timeManager.minutes - lastUpdate >= 1)
         {
-            stateController.coldMultiplier *= -1;
+            playerStates.decreaseCold(20);
+            lastUpdate = timeManager.minutes;
         }
     }
 }

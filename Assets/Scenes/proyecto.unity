@@ -429,6 +429,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timeMultiplier: 0
+  timePassed: 0
   hours: 0
   minutes: 0
   sunLight: {fileID: 1915216646}
@@ -10676,7 +10677,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.010217667, y: -0.51090455}
+  m_Offset: {x: 0.010217667, y: -0.9587456}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -10687,7 +10688,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.1021805, y: 1.4087234}
+  m_Size: {x: 1.1021805, y: 0.616889}
   m_EdgeRadius: 0
 --- !u!4 &1301343520
 Transform:
@@ -10718,6 +10719,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 57a4d6570a22aaab4b23a04b6260be88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  timeManager: {fileID: 310167787}
 --- !u!1 &1357352394
 GameObject:
   m_ObjectHideFlags: 0

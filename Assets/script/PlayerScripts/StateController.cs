@@ -13,7 +13,7 @@ public class StateController : MonoBehaviour
     [Header("Stats to increase and decrease")]
     public float coldToIncrease;
 
-    private int updateStatesTime;
+    private float updateStatesTime;
 
     private bool nightCold;
     private bool nightColdApplied;
@@ -24,9 +24,9 @@ public class StateController : MonoBehaviour
         hungerMultiplier = 1;
         thirstMultiplier = 1;
 
-        coldToIncrease = 0;
+        coldToIncrease = 20;
 
-        updateStatesTime = timeManager.minutes;
+        updateStatesTime = 0f;
 
         nightCold = true;
         nightColdApplied = false;
@@ -34,15 +34,17 @@ public class StateController : MonoBehaviour
 
     void Update()
     {
-        if(timeManager.minutes - updateStatesTime >= 2)
+        Debug.Log(timeManager.timePassed);
+        if(timeManager.timePassed - updateStatesTime >= 100f)
         {
-            updateStatesTime = timeManager.minutes;
+            updateStatesTime = timeManager.timePassed;
             //playerStates.increaseThirst(10 * thirstMultiplier);
             //playerStates.increaseHunger(10 * hungerMultiplier);
             playerStates.increaseCold(coldToIncrease * coldMultiplier);
+            Debug.Log(updateStatesTime);
         }
 
-        ManageNightCold();
+        //ManageNightCold();
     }
 
     void ManageNightCold()
@@ -55,12 +57,20 @@ public class StateController : MonoBehaviour
         {
             nightCold = false;
             nightColdApplied = false;
-            coldToIncrease += 7;
+            coldToIncrease -= 7;
+            if (coldToIncrease < 0)
+            {
+                coldToIncrease = 0;
+            }
         }
 
         if (nightCold && !nightColdApplied)
         {
             coldToIncrease += 7;
+            if (coldToIncrease > 100)
+            {
+                coldToIncrease = 100;
+            }
             nightColdApplied = true;
         }
 

@@ -8,7 +8,7 @@ public class PlayerStates : MonoBehaviour
     public float hunger;
     public float thirst;
     public float cold;
-    // Start is called before the first frame update
+
     void Start()
     {
         HP = 100;
@@ -62,14 +62,14 @@ public class PlayerStates : MonoBehaviour
 
     public void decreaseCold(float quantity)
     {
-        
-        if(cold + quantity >= 100)
+
+        if (cold - quantity < 0)
         {
-            cold = 100;
+            cold = 0;
         }
         else
         {
-            cold += quantity;
+            cold -= quantity;
         }
     }
 
