@@ -12,12 +12,12 @@ public class topdownmovent : MonoBehaviour
     //Para la animacion
     [SerializeField] private float movex;
     [SerializeField] private float movey;
-    private Animator animation;
+    private Animator animator;
 
     //Funcion para iniciar(siempre en mayuscula, son funciones de unity)
     private void Start()
     {
-        animation = GetComponent<Animator>();
+        animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
 
     }
@@ -26,12 +26,12 @@ public class topdownmovent : MonoBehaviour
     {
         movex = Input.GetAxisRaw("Horizontal");
         movey = Input.GetAxisRaw("Vertical");
-        animation.SetFloat("movex", movex);//Animacion en x(izquierda y derecha)
-        animation.SetFloat("movey",movey);//Animacion en y(arriba y abajo)
+        animator.SetFloat("movex", movex);//Animacion en x(izquierda y derecha)
+        animator.SetFloat("movey",movey);//Animacion en y(arriba y abajo)
         //Parte del funcionamiento de la animacion idle(para estar quieto)
         if (movex != 0 || movey != 0) {
-            animation.SetFloat("finx", movex);
-            animation.SetFloat("finy", movey);
+            animator.SetFloat("finx", movex);
+            animator.SetFloat("finy", movey);
         }
         direction = new Vector2(movex, movey).normalized;
         // Debug.Log("movex: " + movex.ToString());
