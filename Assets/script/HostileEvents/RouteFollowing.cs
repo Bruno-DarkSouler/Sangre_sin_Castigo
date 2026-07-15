@@ -14,6 +14,7 @@ public class RouteFollowing : MonoBehaviour
     {
         planeSpeed = 10;
         currentPoint = 0;
+        Destroy(gameObject, 10f);
     }
 
     void Update()
