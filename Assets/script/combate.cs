@@ -4,15 +4,32 @@ using UnityEngine;
 
 public class controlCamara : MonoBehaviour
 {
-    // Start is called before the first frame update
+    [SerializeField] private GameObject bulletP;//Prefab de la bala
+    [SerializeField] private float bulletSpeed;//Velocidad
+    [SerializeField] private float shootDelay;// un pequeño delay
+  
+    private float lastShoot;//Detecta el ultimo disparo para poner el delay
+  
     void Start()
     {
-        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        float horShoot = Input.GetAxisRaw("ShootHorizontal");//Teclas de disparo horizontal y abajo la vertical(alfinal lo hice con flechas, si quieren lo puedo cambiar)
+        float verShoot = Input.GetAxisRaw("ShootVertical");
+
+        if((horShoot != 0 || verShoot != 0) && Time.time > lastShoot + shootDelay)//Establece cuando se ejecuta el disparo teniendo en cuenta el delay
+        {
+            shoot(horShoot, verShoot);//Dispara
+            lastShoot = Time.time;//Guarda el ultimo disparo(para el delay de arriba(esto tambien por si hacemos varias armas lo vamos modificando y asi))
+        }
+    }
+
+    void shoot(float x, float y)
+    {
+        GameObject bullet = Instantiate(bulletP, transform.position, transform.rotation) as GameObject;//instanciamos las balas
+        bullet.AddComponent<Rigidbody2D>().gravityScale = 0;//sin gravedad por ser un top-down
+        bullet.GetComponent<Rigidbody2D>().velocity = new Vector2(x, y) * bulletSpeed;//la velocidad de las balas y direccion al disparar
     }
 }
