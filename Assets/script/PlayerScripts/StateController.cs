@@ -34,14 +34,14 @@ public class StateController : MonoBehaviour
 
     void Update()
     {
-        Debug.Log(timeManager.timePassed);
+        //Debug.Log(timeManager.timePassed);
         if(timeManager.timePassed - updateStatesTime >= 100f)
         {
             updateStatesTime = timeManager.timePassed;
             //playerStates.increaseThirst(10 * thirstMultiplier);
             //playerStates.increaseHunger(10 * hungerMultiplier);
             playerStates.increaseCold(coldToIncrease * coldMultiplier);
-            Debug.Log(updateStatesTime);
+            //Debug.Log(updateStatesTime);
         }
 
         //ManageNightCold();

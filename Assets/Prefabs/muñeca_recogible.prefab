@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6121890558746906426}
   - component: {fileID: 4146619902531253691}
   - component: {fileID: 1937584996444714928}
+  - component: {fileID: -4687996250999983265}
   m_Layer: 0
   m_Name: "mu\xF1eca_recogible"
   m_TagString: newObject
@@ -143,4 +144,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3a1e857ae5fbfab43be9c68dacaa0ede, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  object2d: {fileID: 0}
   cant: 1
+--- !u!114 &-4687996250999983265
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5623425941778592066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 20903578969f9c84caf368044e0c69db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantidad: 0
