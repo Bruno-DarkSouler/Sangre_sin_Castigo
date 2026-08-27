@@ -6,12 +6,14 @@ public class enemyBullet : MonoBehaviour
 {//Variables de la bala enemiga
     [SerializeField] private float speedBullet;
     private Transform player;
+    public PlayerStates lifePlayer;
     private Rigidbody2D rb;
 
     void Start()
     {
         player = GameObject.Find("player").transform;//Traemos el Transform del jugador
         rb = GetComponent<Rigidbody2D>();
+        lifePlayer = FindObjectOfType<PlayerStates>();
         EnemyShoot();
     }
 
@@ -29,9 +31,17 @@ public class enemyBullet : MonoBehaviour
         Destroy(gameObject);//Destruye la bala
     }
 
-    private void OnCollisionEnter2D()
+    void OnTriggerEnter2D(Collider2D collider)
     {
-        Destroy(gameObject);
+        if (collider.CompareTag("Player"))
+        {
+            if (lifePlayer.HP != 0)
+            {
+                lifePlayer.HP -= 10;
+                Destroy(gameObject);
+               
+            }
+        }
     }
 }
 
