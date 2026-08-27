@@ -7,11 +7,12 @@ public class inventoryScript : MonoBehaviour
 {
     [SerializeField] private List<GameObject> Backpack = new List<GameObject>();
     [SerializeField] private GameObject inventory;
-    public bool lifeInv = false;
+    public topdownmovent player;
+    public bool lifeInv;
 
     void OnTriggerEnter2D(Collider2D collider)
     {
-        if (collider.CompareTag("newObject"))
+        if (collider.CompareTag("item"))
         {
             for (int i = 0; i < Backpack.Count; i++)
             {
@@ -27,6 +28,7 @@ public class inventoryScript : MonoBehaviour
 
     void Start()
     {
+        player = FindObjectOfType<topdownmovent>();
         inventory.SetActive(false);
         lifeInv = false;
     }
@@ -35,13 +37,17 @@ public class inventoryScript : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.I))
         {
-            Debug.Log("APRETE I");
-
             lifeInv = !lifeInv;
-
-            Debug.Log("lifeInv = " + lifeInv);
-
             inventory.SetActive(lifeInv);
+        }
+
+        if(lifeInv == true)
+        {
+            player.speed = 0;
+        }
+        else
+        {
+            player.speed = 6;
         }
     }
 }

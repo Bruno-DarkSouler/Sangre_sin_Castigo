@@ -6,7 +6,7 @@ public class topdownmovent : MonoBehaviour
 {
     //Solo con esto tenemos el movimiento del personaje
     //Variables de referencia para la velocidad y direccion
-    [SerializeField] private float speed;
+    public float speed;
     [SerializeField] private Vector2 direction;
     private Rigidbody2D rb2D;
     //Para la animacion
@@ -19,7 +19,6 @@ public class topdownmovent : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         rb2D = GetComponent<Rigidbody2D>();
-
     }
     //Funcion para actualizar(siempre en mayuscula)
     private void Update()
