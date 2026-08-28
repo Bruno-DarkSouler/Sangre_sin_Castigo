@@ -66,6 +66,7 @@
   <ItemGroup>
     <Compile Include="Assets/script/MainMenu.cs" />
     <Compile Include="Assets/script/PlayerController.cs" />
+    <Compile Include="Assets/script/Map/MapStreamer.cs" />
     <Compile Include="Assets/script/PlayerScripts/StateController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_TextEventHandler.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexShakeA.cs" />
