@@ -14,7 +14,7 @@ public class MapStreamer : MonoBehaviour
     void Start()
     {
         prefabExists = false;
-        player.position = new Vector3(-400, -100, 0);
+        player.position = new Vector3(-64, 21, 0);
     }
 
     // Update is called once per frame
