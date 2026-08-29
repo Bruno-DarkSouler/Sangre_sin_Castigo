@@ -20,7 +20,7 @@ public class enrmigo : MonoBehaviour
         if (Vector2.Distance(transform.position, player.position) > distance)//Medimos la distancia entre el jugador y el enemigo y lo comparamos con la distancia para empezar a dispara
         {
             transform.position = Vector2.MoveTowards(transform.position, player.position, enemySpeed * Time.deltaTime);//El movimiento(le pasamos adonde va, desde donde parte y la velovidad)
-        }
+        }      
     }
 }
 
