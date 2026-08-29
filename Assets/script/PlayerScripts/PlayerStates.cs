@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlayerStates : MonoBehaviour
 {
+    public GameObject player;
     public float HP;
     public float hunger;
     public float thirst;
@@ -15,7 +16,14 @@ public class PlayerStates : MonoBehaviour
         hunger = 50;
         thirst = 50;
         cold = 10;
+        
     }
+
+    void Update()
+    {
+        dead();
+    }
+
 
     //Functions for HP
 
@@ -126,6 +134,15 @@ public class PlayerStates : MonoBehaviour
         else
         {
             thirst += quantity;
+        }
+    }
+
+    public void dead()
+    {
+        if (HP == 0)
+        {
+            Destroy(gameObject);
+            Time.timeScale = 0f;
         }
     }
 }
