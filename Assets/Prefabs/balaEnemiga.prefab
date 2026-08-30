@@ -135,6 +135,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speedBullet: 4
+  damage: 20
   lifePlayer: {fileID: 0}
 --- !u!50 &9174896644060136315
 Rigidbody2D:

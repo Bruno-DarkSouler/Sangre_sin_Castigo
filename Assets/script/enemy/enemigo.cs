@@ -9,10 +9,17 @@ public class enrmigo : MonoBehaviour
     [SerializeField] private float enemySpeed;//Velocidad(hay que poner valores altos(supongo por el deltatime))
     private Rigidbody2D rb;//Enemigo
     private Vector2 movement;//Movimiento
+    public PlayerStates control;
+
+
+    void Start()
+    {
+        control = FindObjectOfType<PlayerStates>();
+    }
 
     void Update()
     {
-        Follow(); 
+            Follow();
     }
 
     void Follow()//Funcion para seguir al jugador

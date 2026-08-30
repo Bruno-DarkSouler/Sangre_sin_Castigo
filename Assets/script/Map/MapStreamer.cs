@@ -20,7 +20,7 @@ public class MapStreamer : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Debug.Log(player.position.x);
+        //Debug.Log(player.position.x);
         if(prefabExists == false && player.position.x < -450 && player.position.x > -551)
         {
             mapInstance = Instantiate(prefabMap, mapGrid);

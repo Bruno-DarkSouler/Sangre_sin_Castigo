@@ -5,9 +5,11 @@ using UnityEngine;
 public class enemyBullet : MonoBehaviour
 {//Variables de la bala enemiga
     [SerializeField] private float speedBullet;
+    [SerializeField] private float damage;
     private Transform player;
     public PlayerStates lifePlayer;
     private Rigidbody2D rb;
+
 
     void Start()
     {
@@ -37,7 +39,7 @@ public class enemyBullet : MonoBehaviour
         {
             if (lifePlayer.HP != 0)
             {
-                lifePlayer.HP -= 10;
+                lifePlayer.HP -= damage;
                 Destroy(gameObject);
                
             }

@@ -9,6 +9,7 @@ public class PlayerStates : MonoBehaviour
     public float hunger;
     public float thirst;
     public float cold;
+    
 
     void Start()
     {
@@ -139,10 +140,14 @@ public class PlayerStates : MonoBehaviour
 
     public void dead()
     {
-        if (HP == 0)
+        if (HP <= 0)
         {
-            Destroy(gameObject);
-            Time.timeScale = 0f;
+            Debug.Log("Funciono 1");
+           if(GameManager.instance != null)
+            {
+                Debug.Log("Funciono 2");
+                GameManager.instance.GameOver();
+            }
         }
     }
 }
