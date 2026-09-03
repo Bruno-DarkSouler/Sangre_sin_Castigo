@@ -7,7 +7,7 @@ public class MapStreamer : MonoBehaviour
 
     public Transform player;
     public Transform mapGrid;
-    public GameObject prefabMap;
+    public GameObject []prefabsMap;
     private GameObject mapInstance;
     private bool prefabExists;
 
@@ -23,7 +23,7 @@ public class MapStreamer : MonoBehaviour
         //Debug.Log(player.position.x);
         if(prefabExists == false && player.position.x < -450 && player.position.x > -551)
         {
-            mapInstance = Instantiate(prefabMap, mapGrid);
+            // mapInstance = Instantiate(prefabMap, mapGrid);
             prefabExists = true;
         }
         else
