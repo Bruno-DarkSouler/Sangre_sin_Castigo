@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Data.Common;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 
@@ -11,6 +12,8 @@ public class TimeManager : MonoBehaviour
     public int hours;
     public int minutes;
     private float dayPorcentaje;
+
+    private bool messageSent = false;
 
     public Light2D sunLight;
     public Gradient dayTimeColor;
@@ -34,6 +37,11 @@ public class TimeManager : MonoBehaviour
 
         sunLight.color = dayTimeColor.Evaluate(dayPorcentaje);
 
+        if(timePassed > 3 && !messageSent)
+        {
+            RadioController.Instance.ShowMessage("Tomori te amo", 3f);
+            messageSent = true;
+        }
         // Debug.Log(dayPorcentaje);
         // Debug.Log(minutes);
         // Debug.Log(hours);
