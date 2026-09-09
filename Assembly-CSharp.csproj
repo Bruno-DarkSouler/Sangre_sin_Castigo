@@ -90,6 +90,7 @@
     <Compile Include="Assets/script/enemy/controllerEnemyShoot.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/Benchmark03.cs" />
     <Compile Include="Assets/script/PlayerScripts/combate.cs" />
+    <Compile Include="Assets/script/InterfaceControl/PersonDialogue.cs" />
     <Compile Include="Assets/script/enemy/script_enemigo2.cs" />
     <Compile Include="Assets/script/PlayerScripts/PlayerStates.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_ExampleScript_01.cs" />
@@ -104,6 +105,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ObjectSpin.cs" />
     <Compile Include="Assets/script/TimeController/TimeManager.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets/script/InterfaceControl/DialogueController.cs" />
     <Compile Include="Assets/script/PlayerScripts/inventoryScript.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
     <Compile Include="Assets/script/PlayerScripts/bulletController.cs" />

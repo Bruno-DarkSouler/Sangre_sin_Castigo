@@ -6,7 +6,7 @@ using UnityEngine;
 public class Interactions : MonoBehaviour
 {
     [Header("Configuración del NPC")]
-    [TextArea(3, 5)] public string mensajeDialogo = "¡Hola, viajero!";
+    [TextArea(3, 5)] public string mensajeDialogo;
     public float tiempoDisplay = 3f;
 
     [Header("Referencias UI")]
@@ -27,14 +27,14 @@ public class Interactions : MonoBehaviour
         // Si el jugador está cerca y presiona la E
         if (jugadorCerca && Input.GetKeyDown(KeyCode.E))
         {
-            Hablar();
+            Hablar(mensajeDialogo);
         }
     }
 
-    void Hablar()
+    public void Hablar(string dialogueMessage)
     {
         canvasGlobo.SetActive(true);
-        textoDialogo.text = mensajeDialogo;
+        textoDialogo.text = dialogueMessage;
 
         // Si ya había una cuenta atrás corriendo, la reiniciamos
         if (rutinaOcultar != null) StopCoroutine(rutinaOcultar);
