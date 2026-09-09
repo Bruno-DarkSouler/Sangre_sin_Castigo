@@ -1,17 +1,38 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class NewBehaviourScript : MonoBehaviour
+public class ArgSoldiers : MonoBehaviour
 {
     [Header("Configuracion del movimiento")]
     public float speed = 10.5f;
 
     [Header("Configuracion del movimiento")]
     [Tooltip("Camino inicial para llegar al lugar del evento")]
+    public int pathTime;
+    public int pathTime2;
+    public int pathTime3;
+    public int pathTime4;
+    public int pathTime5;
     public Transform[] onceWaypoints;
+    public bool pathDone = false;
     public Transform[] onceWaypoints2;
+    
+    public bool pathDone2 = false;
+
+    public Transform[] onceWaypoints3;
+    
+    public bool pathDone3 = false;
+
+    public Transform[] onceWaypoints4;
+    
+    public bool pathDone4 = false;
+
+    public Transform[] onceWaypoints5;
+    
+    public bool pathDone5 = false;
 
     private int currentOnceIndex = 0;
     private bool finishedPath = false;
@@ -26,19 +47,99 @@ public class NewBehaviourScript : MonoBehaviour
 
         // if(timeManager.minutes > 40 && timeManager.hours == 11)
 
+        Debug.Log("-----------Tiempo-------------");
+        Debug.Log(currentStage);
+        Debug.Log(timeManager.minutes / 60);
+        Debug.Log(pathDone);
+        Debug.Log(finishedPath);
+        Debug.Log("-----------Tiempo-------------");
+
+        if(currentStage == 0 && timeManager.timePassed / 60 > pathTime)
+        {
+            currentStage = 1;
+        }
+
+        if(currentStage == 1 && timeManager.timePassed / 60 > pathTime2)
+        {
+            currentStage = 2;
+        }
+
+        if(currentStage == 2 && timeManager.timePassed / 60 > pathTime3)
+        {
+            currentStage = 3;
+        }
+
+        if(currentStage == 3 && timeManager.timePassed / 60 > pathTime4)
+        {
+            currentStage = 4;
+        }
+
+        if(currentStage == 4 && timeManager.timePassed / 60 > pathTime5)
+        {
+            currentStage = 5;
+        }
+
+
+
         switch(currentStage)
         {
             case 1:
-                if (!finishedPath)
+                if (!finishedPath && !pathDone)
                 {
                     FollowPath(onceWaypoints, currentOnceIndex);
+                }
+                else
+                {
+                    pathDone = true;
+                    finishedPath = false;
                 }
             break;
 
             case 2:
                 if (!finishedPath)
                 {
-                    FollowPath(onceWaypoints, currentOnceIndex);
+                    FollowPath(onceWaypoints2, currentOnceIndex);
+                }
+                else
+                {
+                    pathDone2 = true;
+                    finishedPath = false;
+                }
+            break;
+
+            case 3:
+                if (!finishedPath)
+                {
+                    FollowPath(onceWaypoints3, currentOnceIndex);
+                }
+                else
+                {
+                    pathDone3 = true;
+                    finishedPath = false;
+                }
+            break;
+
+            case 4:
+                if (!finishedPath)
+                {
+                    FollowPath(onceWaypoints4, currentOnceIndex);
+                }
+                else
+                {
+                    pathDone4 = true;
+                    finishedPath = false;
+                }
+            break;
+
+            case 5:
+                if (!finishedPath)
+                {
+                    FollowPath(onceWaypoints5, currentOnceIndex);
+                }
+                else
+                {
+                    pathDone5 = true;
+                    finishedPath = false;
                 }
             break;
 
@@ -50,10 +151,11 @@ public class NewBehaviourScript : MonoBehaviour
     private void FollowPath(Transform[] waypointsPath, int index)
     {
         if(index >= waypointsPath.Length)
-            {
-                finishedPath = true;
-                return;
-            }
+        {
+            finishedPath = true;
+            currentOnceIndex = 0;
+            return;
+        }
 
         Transform targetWaypoint = waypointsPath[index];
 

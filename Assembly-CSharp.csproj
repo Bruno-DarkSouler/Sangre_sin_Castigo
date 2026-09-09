@@ -108,6 +108,7 @@
     <Compile Include="Assets/script/InterfaceControl/DialogueController.cs" />
     <Compile Include="Assets/script/PlayerScripts/inventoryScript.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/VertexJitter.cs" />
+    <Compile Include="Assets/script/NPC/PathController.cs" />
     <Compile Include="Assets/script/PlayerScripts/bulletController.cs" />
     <Compile Include="Assets/script/Map/RoofController.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextConsoleSimulator.cs" />

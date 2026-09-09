@@ -13,10 +13,10 @@ public class DialogueController : MonoBehaviour
 
         foreach(PersonDialogue dialogue in soldiersDialogueList)
         {
-            Debug.Log("-----------Tiempo-------------");
-            Debug.Log(dialogue.GetTotalMinutes());
-            Debug.Log(timeManager.timePassed);
-            Debug.Log("-----------Tiempo-------------");
+            // Debug.Log("-----------Tiempo-------------");
+            // Debug.Log(dialogue.GetTotalMinutes());
+            // Debug.Log(timeManager.timePassed);
+            // Debug.Log("-----------Tiempo-------------");
             if(!dialogue.wasDisplayed && timeManager.timePassed / 60 >= dialogue.GetTotalMinutes())
             {
                 dialogue.wasDisplayed = true;
