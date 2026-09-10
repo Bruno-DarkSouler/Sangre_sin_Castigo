@@ -401,7 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_UiScaleMode: 0
-  m_ReferencePixelsPerUnit: 100
+  m_ReferencePixelsPerUnit: 105
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
   m_ScreenMatchMode: 0
@@ -476,6 +476,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2.5
+  pathTime: 190
+  pathTime2: 0
+  pathTime3: 0
+  pathTime4: 0
+  pathTime5: 0
   onceWaypoints:
   - {fileID: 0}
   - {fileID: 0}
@@ -483,8 +488,14 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   pathDone: 0
-  pathTime: 190
   onceWaypoints2: []
+  pathDone2: 0
+  onceWaypoints3: []
+  pathDone3: 0
+  onceWaypoints4: []
+  pathDone4: 0
+  onceWaypoints5: []
+  pathDone5: 0
   dialogues: 
   currentStage: 0
   timeManager: {fileID: 0}
