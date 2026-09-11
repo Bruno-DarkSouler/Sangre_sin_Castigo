@@ -16,7 +16,9 @@ public class TimeManager : MonoBehaviour
     public int days = 2;
     private float dayPorcentaje;
 
+    private bool startedExisting = false;
     private bool messageSent = false;
+    private bool messageSent2 = false;
     private bool[] isTimeEvent = {false, false};
     private bool[] eventIsDone = {false, false};
 
@@ -48,10 +50,22 @@ public class TimeManager : MonoBehaviour
             days++;
         }
 
-        if(timePassed > 3 && !messageSent)
+        if(timePassed > 0 && !startedExisting)
         {
-            RadioController.Instance.ShowMessage("Tomori te amo", 3f);
+            RadioController.Instance.ShowMessage("", 0f);
+            startedExisting = true;
+        }
+
+        if(timePassed / 60 > 190 && !messageSent)
+        {
+            RadioController.Instance.ShowMessage("Se le informa a todas las unidades que estamos rodeados por el enemigo.", 3f);
             messageSent = true;
+        }
+
+        if(timePassed / 60 > 195 && !messageSent2)
+        {
+            RadioController.Instance.ShowMessage("Daremos la rendición sin oponer resistencia.", 3f);
+            messageSent2 = true;
         }
         // Debug.Log("Hola");
         // Debug.Log(minutes);
