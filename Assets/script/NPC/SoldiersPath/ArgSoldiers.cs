@@ -96,7 +96,7 @@ public class ArgSoldiers : MonoBehaviour
             break;
 
             case 2:
-                if (!finishedPath)
+                if (!finishedPath && !pathDone2)
                 {
                     FollowPath(onceWaypoints2, currentOnceIndex);
                 }
@@ -108,7 +108,7 @@ public class ArgSoldiers : MonoBehaviour
             break;
 
             case 3:
-                if (!finishedPath)
+                if (!finishedPath && !pathDone3)
                 {
                     FollowPath(onceWaypoints3, currentOnceIndex);
                 }
@@ -120,7 +120,7 @@ public class ArgSoldiers : MonoBehaviour
             break;
 
             case 4:
-                if (!finishedPath)
+                if (!finishedPath && !pathDone4)
                 {
                     FollowPath(onceWaypoints4, currentOnceIndex);
                 }
@@ -132,7 +132,7 @@ public class ArgSoldiers : MonoBehaviour
             break;
 
             case 5:
-                if (!finishedPath)
+                if (!finishedPath && !pathDone5)
                 {
                     FollowPath(onceWaypoints5, currentOnceIndex);
                 }

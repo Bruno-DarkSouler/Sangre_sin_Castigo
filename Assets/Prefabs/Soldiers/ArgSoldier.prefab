@@ -475,12 +475,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 109cc972e798369c181b7cfdf724a0ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2.5
+  speed: 10
   pathTime: 190
-  pathTime2: 0
-  pathTime3: 0
-  pathTime4: 0
-  pathTime5: 0
+  pathTime2: 230
+  pathTime3: 280
+  pathTime4: 330
+  pathTime5: 380
   onceWaypoints:
   - {fileID: 0}
   - {fileID: 0}
