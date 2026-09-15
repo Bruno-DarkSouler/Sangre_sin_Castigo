@@ -19,7 +19,8 @@ public class ArgSoldiers : MonoBehaviour
     public Transform[] onceWaypoints;
     public bool pathDone = false;
     public Transform[] onceWaypoints2;
-    
+    private Animator animator;
+
     public bool pathDone2 = false;
 
     public Transform[] onceWaypoints3;
@@ -40,6 +41,10 @@ public class ArgSoldiers : MonoBehaviour
     public int currentStage = 0;
     public TimeManager timeManager;
 
+    void Start()
+    {
+        animator = GetComponentInChildren<Animator>();
+    }
 
     // Update is called once per frame
     void Update()
@@ -47,14 +52,14 @@ public class ArgSoldiers : MonoBehaviour
 
         // if(timeManager.minutes > 40 && timeManager.hours == 11)
 
-        Debug.Log("-----------Tiempo-------------");
-        Debug.Log(currentStage);
-        Debug.Log(timeManager.minutes / 60);
-        Debug.Log(pathDone);
-        Debug.Log(finishedPath);
-        Debug.Log("-----------Tiempo-------------");
-
-        if(currentStage == 0 && timeManager.timePassed / 60 > pathTime)
+        //Debug.Log("-----------Tiempo-------------");
+        //Debug.Log(currentStage);
+        //Debug.Log(timeManager.minutes / 60);
+        //Debug.Log(pathDone);
+        //Debug.Log(finishedPath);
+        //Debug.Log("-----------Tiempo-------------");
+        animator.SetBool("IsMoving", false);//Le decimos que se quede quieto
+        if (currentStage == 0 && timeManager.timePassed / 60 > pathTime)
         {
             currentStage = 1;
         }
@@ -150,23 +155,29 @@ public class ArgSoldiers : MonoBehaviour
 
     private void FollowPath(Transform[] waypointsPath, int index)
     {
-        if(index >= waypointsPath.Length)
+        if (index >= waypointsPath.Length)
         {
             finishedPath = true;
             currentOnceIndex = 0;
             return;
         }
-
         Transform targetWaypoint = waypointsPath[index];
-
+        Vector2 direction = (targetWaypoint.position - transform.position).normalized;
+        //Calcula donde esta yendo el soldado
+        if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
+        {
+            direction = new Vector2(Mathf.Sign(direction.x), 0);
+        }
+        else
+        {
+            direction = new Vector2(0, Mathf.Sign(direction.y));
+        }
         transform.position = Vector2.MoveTowards(transform.position, targetWaypoint.position, speed * Time.deltaTime);
+        animator.SetFloat("moveX", direction.x);//Le pasamos al blendtree un valor para ejecutar las animaciones en X 
+        animator.SetFloat("moveY", direction.y);//Le pasamos al blendtree un valor para ejecutar las animaciones en Y
+        animator.SetBool("IsMoving", true);//Le decimos que se mueva
 
-        // Debug.Log("-----------------------------");
-        // Debug.Log(index);
-        // Debug.Log(Vector2.Distance(transform.position, targetWaypoint.position) < 1f);
-        // Debug.Log("-----------------------------");
-
-        if(Vector2.Distance(transform.position, targetWaypoint.position) < 1f)
+        if (Vector2.Distance(transform.position, targetWaypoint.position) < 1f)
         {
             currentOnceIndex++;
         }
