@@ -1372,7 +1372,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8320732705949073443, guid: 6c7057f16b9dab8688361e0131741d92, type: 3}
       propertyPath: speed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8320732705949073443, guid: 6c7057f16b9dab8688361e0131741d92, type: 3}
       propertyPath: pathTime2
@@ -3762,7 +3762,7 @@ Transform:
   m_GameObject: {fileID: 612430114}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.82, y: 60.46, z: -10}
+  m_LocalPosition: {x: -62.16, y: 25.36, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -6909,7 +6909,7 @@ Transform:
   m_GameObject: {fileID: 1118650236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -40.82, y: 60.46, z: -10}
+  m_LocalPosition: {x: -62.16, y: 25.36, z: -10}
   m_LocalScale: {x: 1, y: 1.0015523, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -7887,11 +7887,11 @@ GameObject:
   - component: {fileID: 1222398081}
   m_Layer: 0
   m_Name: enemigo
-  m_TagString: Untagged
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1222398075
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7908,6 +7908,7 @@ MonoBehaviour:
   distance: 3
   enemySpeed: 4
   control: {fileID: 0}
+  enemyHP: 0
 --- !u!95 &1222398076
 Animator:
   serializedVersion: 5
@@ -8035,7 +8036,7 @@ Transform:
   m_GameObject: {fileID: 1222398074}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -69, y: 26.2, z: 0.0072649}
+  m_LocalPosition: {x: -67.37, y: 26.3, z: 0.0072649}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -9971,7 +9972,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8320732705949073443, guid: 6c7057f16b9dab8688361e0131741d92, type: 3}
       propertyPath: speed
-      value: 10
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 8320732705949073443, guid: 6c7057f16b9dab8688361e0131741d92, type: 3}
       propertyPath: pathTime2
@@ -13250,7 +13251,7 @@ Transform:
   m_GameObject: {fileID: 1641685475}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -40.82, y: 60.46, z: 0.0072649}
+  m_LocalPosition: {x: -62.16, y: 25.36, z: 0.0072649}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -13389,6 +13390,7 @@ MonoBehaviour:
   bulletP: {fileID: 8247173701745097877, guid: 16fecdfc77b1472488aac71ca020f082, type: 3}
   bulletSpeed: 7
   shootDelay: 0.5
+  enemyDamage: 20
 --- !u!1 &1651865384
 GameObject:
   m_ObjectHideFlags: 0

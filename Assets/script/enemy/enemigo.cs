@@ -11,17 +11,21 @@ public class enrmigo : MonoBehaviour
     private Vector2 movement;//Movimiento
     private Animator animator;
     public PlayerStates control;
+    public float enemyHP;
+    
 
 
     void Start()
     {
         control = FindObjectOfType<PlayerStates>();
         animator = GetComponent<Animator>();
+        enemyHP = 100;
     }
 
     void Update()
     {
         Follow();
+        Dead();
     }
 
     void Follow()
@@ -41,11 +45,19 @@ public class enrmigo : MonoBehaviour
             animator.SetFloat("movexE", direction.x);
             animator.SetFloat("moveyE", direction.y);
             animator.SetBool("IsMoving", true);
-            Debug.Log("X: " + direction.x + " Y: " + direction.y);
+            //Debug.Log("X: " + direction.x + " Y: " + direction.y);
         }
         else
         {
             animator.SetBool("IsMoving", false);
+        }
+    }
+
+    void Dead()
+    {
+        if (enemyHP <= 0)
+        {
+            Destroy(gameObject);
         }
     }
 }

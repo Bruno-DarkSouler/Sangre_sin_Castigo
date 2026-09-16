@@ -7,12 +7,8 @@ public class controlCamara : MonoBehaviour
     [SerializeField] private GameObject bulletP;//Prefab de la bala
     [SerializeField] private float bulletSpeed;//Velocidad
     [SerializeField] private float shootDelay;// un pequeño delay
-  
     private float lastShoot;//Detecta el ultimo disparo para poner el delay
-  
-    void Start()
-    {
-    }
+    public float enemyDamage;
 
     void Update()
     {
@@ -25,6 +21,8 @@ public class controlCamara : MonoBehaviour
             lastShoot = Time.time;//Guarda el ultimo disparo(para el delay de arriba(esto tambien por si hacemos varias armas lo vamos modificando y asi))
         }
     }
+
+
 
     void shoot(float x, float y)
     {
