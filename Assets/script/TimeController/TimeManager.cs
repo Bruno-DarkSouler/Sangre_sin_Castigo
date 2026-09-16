@@ -7,6 +7,7 @@ using UnityEngine.Rendering.Universal;
 public class TimeManager : MonoBehaviour
 {
     [SerializeField] private float timeMultiplier;
+    [SerializeField] private GameObject enemigos;
     public float timePassed;
 
     public bool timeIsRunning = false;
@@ -78,6 +79,17 @@ public class TimeManager : MonoBehaviour
             // Debug.Log(minutes);
             // Debug.Log(hours);
         }
+
+        if (hours >= 6 && !eventIsDone[0])
+        {
+            enemigos.SetActive(true);
+            eventIsDone[0] = true;
+        }
+        // Debug.Log("Hola");
+        // Debug.Log(minutes);
+        // Debug.Log(days);
+        // Debug.Log(minutes);
+        // Debug.Log(hours);
 
     }
 }
