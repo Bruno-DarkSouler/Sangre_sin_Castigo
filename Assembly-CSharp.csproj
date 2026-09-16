@@ -125,6 +125,7 @@
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/WarpTextExample.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/TextMeshProFloatingText.cs" />
     <Compile Include="Assets/TextMesh Pro/Examples &amp; Extras/Scripts/ShaderPropAnimator.cs" />
+    <Compile Include="Assets/script/interfaz/EndingScreen.cs" />
     <Compile Include="Assets/script/PlayerScripts/topdownmovent.cs" />
     <Compile Include="Assets/script/InterfaceControl/RadioController.cs" />
     <Compile Include="Assets/script/interfaz/ThirstBar.cs" />

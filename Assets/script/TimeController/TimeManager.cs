@@ -61,13 +61,13 @@ public class TimeManager : MonoBehaviour
                 startedExisting = true;
             }
 
-            if(timePassed / 60 > 190 && !messageSent)
+            if(timePassed / 60 > 300 && !messageSent)
             {
                 RadioController.Instance.ShowMessage("Se le informa a todas las unidades que estamos rodeados por el enemigo.", 3f);
                 messageSent = true;
             }
 
-            if(timePassed / 60 > 195 && !messageSent2)
+            if(timePassed / 60 > 305 && !messageSent2)
             {
                 RadioController.Instance.ShowMessage("Daremos la rendición sin oponer resistencia.", 3f);
                 messageSent2 = true;
