@@ -10,6 +10,14 @@ public class controlCamara : MonoBehaviour
     private float lastShoot;//Detecta el ultimo disparo para poner el delay
     public float enemyDamage;
 
+    public topdownmovent movement;
+    public ArduinoController arduinoController;
+
+    void Start()
+    {
+        arduinoController.Button5Pressed += HardwareShoot;
+    }
+
     void Update()
     {
         float horShoot = Input.GetAxisRaw("ShootHorizontal");//Teclas de disparo horizontal y abajo la vertical(alfinal lo hice con flechas, si quieren lo puedo cambiar)
@@ -22,7 +30,10 @@ public class controlCamara : MonoBehaviour
         }
     }
 
-
+    void HardwareShoot()
+    {
+        shoot(movement.GetMovex(), movement.GetMovey());
+    }
 
     void shoot(float x, float y)
     {

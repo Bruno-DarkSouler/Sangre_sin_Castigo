@@ -16,6 +16,16 @@ public class topdownmovent : MonoBehaviour
 
     public ArduinoController hardwareController;
 
+    public float GetMovex()
+    {
+        return movex;
+    }
+
+    public float GetMovey()
+    {
+        return movey;
+    }
+
     //Funcion para iniciar(siempre en mayuscula, son funciones de unity)
     private void Start()
     {
