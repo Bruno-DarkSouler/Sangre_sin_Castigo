@@ -7,13 +7,13 @@ public class enrmigo : MonoBehaviour
     public Transform player;//Jugador
     [SerializeField] private float distance;//Distancia minima
     [SerializeField] private float enemySpeed;//Velocidad(hay que poner valores altos(supongo por el deltatime))
+    [SerializeField] private float separationRadius = 1.0f; // <--- NUEVO: Radio de detección para separarse
     private Rigidbody2D rb;//Enemigo
     private Vector2 movement;//Movimiento
     private Animator animator;
     public PlayerStates control;
     public float enemyHP;
     
-
 
     void Start()
     {
@@ -25,6 +25,7 @@ public class enrmigo : MonoBehaviour
     void Update()
     {
         Follow();
+        Separate(); // <--- NUEVO: Llamamos a la función de separación en cada frame
         Dead();
     }
 
@@ -58,6 +59,26 @@ public class enrmigo : MonoBehaviour
         if (enemyHP <= 0)
         {
             Destroy(gameObject);
+        }
+    }
+
+    //Separa a los enemigos para no quedar unos encima de otros
+    void Separate()
+    {
+        //  Busca los collider en el radio indicado con Physics2D.OverlapCircleAll
+        Collider2D[] colliders = Physics2D.OverlapCircleAll(transform.position, separationRadius);
+        
+        foreach (Collider2D col in colliders)
+        {
+            // Comprobamos si es otro enemigo y si tiene el script de los enemigos
+            if (col.gameObject != gameObject && col.GetComponent<enrmigo>() != null)
+            {
+                // Calculamos la dirección opuesta al enemigo que detectamos
+                Vector2 directionAway = (transform.position - col.transform.position).normalized;
+                
+                // Se mueve a la direccion opuesta(no tiene animacion(creo))
+                transform.position = Vector2.MoveTowards(transform.position, (Vector2)transform.position + directionAway, enemySpeed * Time.deltaTime);
+            }
         }
     }
 }
