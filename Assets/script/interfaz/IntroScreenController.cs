@@ -8,9 +8,12 @@ public class IntroScreenController : MonoBehaviour
     public bool screenActive = true;
 
     public TimeManager timeManager;
+
+    public ArduinoController arduinoController;
+
     void Start()
     {
-        
+        arduinoController.Button6Pressed += StartGame;
     }
 
     
@@ -24,6 +27,8 @@ public class IntroScreenController : MonoBehaviour
 
     void StartGame()
     {
+        if (!screenActive) return;
+
         screenActive = false;
         introScreen.SetActive(false);
 

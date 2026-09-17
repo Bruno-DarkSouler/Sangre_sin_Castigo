@@ -14,6 +14,8 @@ public class topdownmovent : MonoBehaviour
     [SerializeField] private float movey;
     private Animator animator;
 
+    public ArduinoController hardwareController;
+
     //Funcion para iniciar(siempre en mayuscula, son funciones de unity)
     private void Start()
     {
@@ -25,6 +27,28 @@ public class topdownmovent : MonoBehaviour
     {
         movex = Input.GetAxisRaw("Horizontal");
         movey = Input.GetAxisRaw("Vertical");
+        if (!hardwareController.hardwareDisconected)
+        {
+            if (hardwareController.wPressed)
+            {
+                movey = -1;
+            }
+
+            if (hardwareController.aPressed)
+            {
+                movex = -1;
+            }
+
+            if (hardwareController.sPressed)
+            {
+                movey = 1;
+            }
+
+            if (hardwareController.dPressed)
+            {
+                movex = 1;
+            }
+        }
         animator.SetFloat("movex", movex);//Animacion en x(izquierda y derecha)
         animator.SetFloat("movey",movey);//Animacion en y(arriba y abajo)
         //Parte del funcionamiento de la animacion idle(para estar quieto)
